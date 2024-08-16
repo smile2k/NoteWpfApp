@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp1.MainWindow.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:prism="http://prismlibrary.com/"
+        
+        >
+    <!--xmlns:viewModels="clr-namespace:WpfApp1.MainWindow.ViewModels"-->
+    <!--d:DataContext="{d:DesignInstance Type=viewModels:MainWindowViewModel}"-->
+
+    <Grid>
+        <UserControl Grid.Row="0" prism:RegionManager.RegionName="HomePageRegion"/>
+    </Grid>
+</Window>
+
+<!--<StackPanel>
+    <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
+    <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
+    <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
+</StackPanel>-->

@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="WpfApp1.HomePageModule.Views.HomePageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.HomePageModule.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:viewModels="clr-namespace:WpfApp1.HomePageModule.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewModels:HomePageViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition Width="32"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>-->
+            <StackPanel Orientation="Horizontal">
+                <Button Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="0"
+        Command="{Binding OpenHomePageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_home.png" Stretch="Uniform"></Image>
+                </Button>
+                <Button Grid.Column="1" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+        Command="{Binding OpenSettingPageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_setting.png" Stretch="Uniform"/>
+                </Button>
+                <Button Grid.Column="2" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+        Command="{Binding OpenToDoPageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_todo.png" Stretch="Fill"></Image>
+                </Button>
+                <Button Grid.Column="3" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+        Command="{Binding OpenExpensePageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/finance.jpg" Stretch="Fill"></Image>
+                </Button>
+            </StackPanel>
+            
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <UserControl Grid.Row="0" prism:RegionManager.RegionName="DetailPageRegion"/>
+        </Grid>
+    </Grid>
+</UserControl>

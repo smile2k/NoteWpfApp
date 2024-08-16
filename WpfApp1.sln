@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.MainWindow", "WpfApp1\WpfApp1.MainWindow.csproj", "{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{06AE84A1-81AF-4F74-913C-C4E852ACB41A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8B27285D-8104-43CD-8DC0-6A1C2FCF77D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Based", "Based", "{34BB3259-64A0-4B88-9D23-9F43CE675FE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Regions", "Regions", "{9DF54ED0-E9BF-4F8C-AD86-09C02E5BE7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.Service", "WpfApp1.Service.DataHandler\WpfApp1.Service.csproj", "{199D98E3-942F-461D-B50F-C0C79D55401B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.HomePageModule", "WpfApp1.HomePage\WpfApp1.HomePageModule.csproj", "{43643E95-D828-40DE-9447-651432ABAF63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.Based.Common", "WpfApp1.Based.Common\WpfApp1.Based.Common.csproj", "{5DB47462-BC9D-4B13-91B4-441B7631A856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.DetailPageModule", "WpfApp1.DetailPageModule\WpfApp1.DetailPageModule.csproj", "{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199D98E3-942F-461D-B50F-C0C79D55401B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199D98E3-942F-461D-B50F-C0C79D55401B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199D98E3-942F-461D-B50F-C0C79D55401B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199D98E3-942F-461D-B50F-C0C79D55401B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43643E95-D828-40DE-9447-651432ABAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43643E95-D828-40DE-9447-651432ABAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43643E95-D828-40DE-9447-651432ABAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43643E95-D828-40DE-9447-651432ABAF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB47462-BC9D-4B13-91B4-441B7631A856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB47462-BC9D-4B13-91B4-441B7631A856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB47462-BC9D-4B13-91B4-441B7631A856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB47462-BC9D-4B13-91B4-441B7631A856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{199D98E3-942F-461D-B50F-C0C79D55401B} = {8B27285D-8104-43CD-8DC0-6A1C2FCF77D6}
+		{43643E95-D828-40DE-9447-651432ABAF63} = {06AE84A1-81AF-4F74-913C-C4E852ACB41A}
+		{5DB47462-BC9D-4B13-91B4-441B7631A856} = {34BB3259-64A0-4B88-9D23-9F43CE675FE5}
+		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF} = {06AE84A1-81AF-4F74-913C-C4E852ACB41A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E1F682D-DC99-4B27-8E04-3F352798A5F3}
+	EndGlobalSection
+EndGlobal

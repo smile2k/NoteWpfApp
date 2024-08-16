@@ -1,0 +1,6 @@
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.DataHandler.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.DataHandler.pdb
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.pdb
