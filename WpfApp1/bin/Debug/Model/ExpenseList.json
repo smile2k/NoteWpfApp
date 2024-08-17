@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "c1a25a02-e7d8-4a11-95cd-d4df85946885",
+    "Name": "",
+    "Datetime": "14/8/2024",
+    "Amount": 0.0,
+    "ExpenseType": null
+  },
+  {
+    "Id": "dabef910-61f0-4d02-8b9d-c22e31ec69c8",
+    "Name": "",
+    "Datetime": "16/8/2024",
+    "Amount": 0.0,
+    "ExpenseType": null
+  },
+  {
+    "Id": "10afb0b8-f41f-4e95-8e63-ff995a7dd1e3",
+    "Name": "",
+    "Datetime": "15/8/2024",
+    "Amount": 0.0,
+    "ExpenseType": null
+  },
+  {
+    "Id": "99dfb9ff-ddd1-430a-b5ea-7dc9c301d75f",
+    "Name": "",
+    "Datetime": "17/8/2024",
+    "Amount": 0.0,
+    "ExpenseType": null
+  },
+  {
+    "Id": "0cbf6915-beb6-4df1-ac20-cee258ce439a",
+    "Name": "",
+    "Datetime": "18/8/2024",
+    "Amount": 0.0,
+    "ExpenseType": ""
+  }
+]

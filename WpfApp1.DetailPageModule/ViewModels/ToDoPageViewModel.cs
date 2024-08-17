@@ -64,6 +64,8 @@ namespace WpfApp1.DetailPageModule.ViewModels
             get => _colorList;
             set => SetProperty(ref _colorList, value);
         }
+
+
         #endregion
 
 
@@ -166,6 +168,8 @@ namespace WpfApp1.DetailPageModule.ViewModels
                 SelectedColor = brush;
             }
         }
+
+        
 
         #region FUNCTIONs SUPPORT
         private string GetModelFolderPath()

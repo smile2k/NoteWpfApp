@@ -4,9 +4,202 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.DetailPageModule.Views"
+             xmlns:behaviors="clr-namespace:WpfApp1.DetailPageModule.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:oxy="http://oxyplot.org/wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Expense"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+
+        <!--Menu-->
+        <Border Grid.Row="0">
+            <Grid ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition MinWidth="300"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Expense" FontSize="18" FontFamily="SegoeUI-Semibold" FontWeight="Bold"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid Grid.Column="1"/>
+                <StackPanel Grid.Column="2"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding ColorList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Background="{Binding Color}"
+                                    Command="{Binding DataContext.ChangeBackgroundColorCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding Color}"
+                                    Margin="5" Width="30" Height="30">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Ellipse  Fill="{TemplateBinding Background}" StrokeThickness="1" Stroke="Gray"/>
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+                <!--Save-->
+                <Button Grid.Column="3" Content="Save" Width="30" Height="30" Background="White"
+                        BorderThickness="0"
+                        Command="{Binding SaveExpenseTableCommand}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                                <Image Source="/WpfApp1.DetailPageModule;component/Resources/icon_save_50.png" Stretch="Uniform"/>
+                            </Border>
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+                <!--Add-->
+                <Button Grid.Column="4" Content="Add" Width="30" Height="30" Background="White"
+                        BorderThickness="0"
+                        Command="{Binding AddRowCommand}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                                <Image Source="/WpfApp1.DetailPageModule;component/Resources/icon_add_50.png" Stretch="Uniform"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!--Content-->
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ExpenseList}" 
+                  RowHeight="30" Background="{Binding SelectedColor}"
+                  AutoGenerateColumns="False" CanUserAddRows="False"
+                  HorizontalScrollBarVisibility="Auto" 
+                  AlternationCount="2" AlternatingRowBackground="#FAFAFA">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="#FAFAFA"/>
+                    <Setter Property="Foreground" Value="DarkBlue"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Visibility="Hidden"/>
+                
+                <DataGridTemplateColumn Header="Date" MinWidth="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Datetime, StringFormat={}{0:dd/MM/yyyy}}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <!--<DatePicker SelectedDate="{Binding Datetime, Mode=TwoWay, StringFormat={}{0:dd/MM/yyyy}}" 
+                                        />-->
+                            <Button Content="{Binding Datetime}" MinWidth="30" FontFamily="SegoeUI-Semibold"
+                                    BorderThickness="0" Background="White"
+                                    Command="{Binding DataContext.OpenDetailRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}">
+                                
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTextColumn Header="Note" Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" >
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="ExpenseType" Binding="{Binding ExpenseType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" >
+
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" >
+
+                </DataGridTextColumn>
+                <!--<DataGridTextColumn Header="DateTime" Binding="{Binding Datetime}"/>-->
+
+
+                <DataGridTemplateColumn MinWidth="30">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button MinWidth="30" FontFamily="SegoeUI-Semibold"
+                                    BorderThickness="0" Background="White"
+                                    Command="{Binding DataContext.OpenDetailRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}">
+                                <Image Source="/WpfApp1.DetailPageModule;component/Resources/icon_edit_50.png" Stretch="Uniform"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn MinWidth="30">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button MinWidth="30" FontFamily="SegoeUI-Semibold"
+                                    BorderThickness="0" Background="White"
+                                    Command="{Binding DataContext.DeleteRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}">
+                                <Image Source="/WpfApp1.DetailPageModule;component/Resources/icon_delete_50.png" Stretch="Uniform"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Summary" FontSize="18" FontFamily="SegoeUI-Semibold" FontWeight="Bold"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <!--<xctk:Pie x:Name="foobar" Grid.Row="1"
+                  DataContext="{Binding PieChartItemList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+            </xctk:Pie>-->
+            <!--<chartingToolkit:Chart Margin="0" Title="Chart Title" DataContext="{Binding PieChartItemList}">
+                <chartingToolkit:PieSeries ItemsSource="{Binding}" 
+                                   DependentValuePath="Title" 
+                                   IndependentValuePath="Value">
+                </chartingToolkit:PieSeries>
+            </chartingToolkit:Chart>-->
+            
+        </Grid>
+        
+        <!-- Popup Control -->
+        <Popup x:Name="detailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
+               IsOpen="{Binding ShowPopup}">
+            <Border Background="White" BorderBrush="Black" BorderThickness="1" Padding="10">
+                <Calendar SelectionMode="SingleDate" 
+                          SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Border>
+        </Popup>
     </Grid>
 </UserControl>
