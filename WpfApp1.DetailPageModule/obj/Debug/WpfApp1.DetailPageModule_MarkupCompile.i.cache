@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\
+F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\obj\Debug\
 WpfApp1.DetailPageModule
 none
 false
@@ -13,8 +13,8 @@ DEBUG;TRACE
 3-737941265
 
 10-1276046773
-1271917664703
+128-961819731
 Views\DetailPageView.xaml;Views\ExpensePageView.xaml;Views\ToDoPageView.xaml;
 
-False
+True
 

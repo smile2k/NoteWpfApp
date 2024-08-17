@@ -8,7 +8,7 @@ namespace WpfApp1.DetailPageModule.Models
 {
     public class TaskToDo
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public bool IsCompleted { get; set; }
         public string Name { get; set; }
         public string Datetime { get; set; }

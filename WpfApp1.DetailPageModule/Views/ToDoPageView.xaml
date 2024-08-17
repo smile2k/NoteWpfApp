@@ -18,19 +18,57 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="To Do List" />
-                <Button Grid.Column="2" Content="Add"
+                <Button Grid.Column="2" Content="Save"
+                        Command="{Binding SaveTaskTableCommand}"/>
+                <Button Grid.Column="3" Content="Add"
                         Command="{Binding AddRowCommand}"/>
             </Grid>
         </Border>
         <DataGrid Grid.Row="1" ItemsSource="{Binding TaskList}" 
+                  RowHeight="30"
                   AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
-                <DataGridCheckBoxColumn Header="IsCompleted" Binding="{Binding IsCompleted}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="DateTime" Binding="{Binding Datetime}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Visibility="Hidden"/>
+                <DataGridCheckBoxColumn Header="IsCompleted" Binding="{Binding IsCompleted}" 
+                                        >
+                    <DataGridCheckBoxColumn.ElementStyle>
+                        <Style TargetType="CheckBox">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridCheckBoxColumn.ElementStyle>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*">
+                    
+                </DataGridTextColumn>
+                <!--<DataGridTextColumn Header="DateTime" Binding="{Binding Datetime}"/>-->
+                <DataGridTemplateColumn Header="Date">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Datetime, StringFormat={}{0:dd/MM/yyyy}}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Datetime, Mode=TwoWay, StringFormat={}{0:dd/MM/yyyy}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Open" 
+                                    Command="{Binding DataContext.OpenDetailRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -42,6 +80,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <!-- Popup Control -->
+        <Popup x:Name="detailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
+               IsOpen="{Binding ShowPopup}">
+            <Border Background="White" BorderBrush="Black" BorderThickness="1" Padding="10">
+                <TextBlock x:Name="popupContent" TextWrapping="Wrap"/>
+            </Border>
+        </Popup>
 
     </Grid>
 </UserControl>
