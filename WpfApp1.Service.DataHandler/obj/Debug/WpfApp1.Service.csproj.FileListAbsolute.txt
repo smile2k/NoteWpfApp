@@ -25,8 +25,6 @@ C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\bin\Debug\System.Th
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\bin\Debug\Unity.Abstractions.pdb
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\bin\Debug\Unity.Container.pdb
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.csproj.CopyComplete
-F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.DataHandler.dll
-F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.DataHandler.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\Microsoft.Xaml.Behaviors.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\Prism.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\Prism.Unity.Wpf.dll
@@ -50,5 +48,7 @@ F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\Unity.Conta
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.csproj.AssemblyReference.cache
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.csproj.CoreCompileInputs.cache
 F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.csproj.CopyComplete
-F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.dll
-F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.DataHandler.pdb
+F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.dll
+F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\bin\Debug\WpfApp1.Service.pdb
+F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.dll
+F:\Project\Note_App\NoteWpfApp\WpfApp1.Service.DataHandler\obj\Debug\WpfApp1.Service.pdb

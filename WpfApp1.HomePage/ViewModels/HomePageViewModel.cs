@@ -51,24 +51,21 @@ namespace WpfApp1.HomePageModule.ViewModels
         #region Methods
         private void OpenHomePage()
         {
-            int x = 1;
             _regionManager.RequestNavigate("DetailPageRegion", "DetailPageView");
         }
 
         private void OpenSettingPage()
         {
-            int x = 1;
+            _regionManager.RequestNavigate("DetailPageRegion", "SettingView");
         }
 
         private void OpenToDoPage()
         {
-            int x = 1;
             _regionManager.RequestNavigate("DetailPageRegion", "ToDoPageView");
         }
 
         private void OpenExpensePage()
         {
-            int x = 1;
             _regionManager.RequestNavigate("DetailPageRegion", "ExpensePageView");
         }
         #endregion

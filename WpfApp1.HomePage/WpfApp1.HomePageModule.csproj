@@ -96,8 +96,12 @@
     <Resource Include="Resources\icn_todo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\icon_home_50.png" />
+    <Resource Include="Resources\icon_setting_50.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
-      <Project>{199D98E3-942F-461D-B50F-C0C79D55401B}</Project>
+      <Project>{199d98e3-942f-461d-b50f-c0c79d55401b}</Project>
       <Name>WpfApp1.Service</Name>
     </ProjectReference>
   </ItemGroup>

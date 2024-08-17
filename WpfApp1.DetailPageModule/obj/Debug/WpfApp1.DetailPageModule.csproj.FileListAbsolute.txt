@@ -46,8 +46,6 @@ F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\System.Runtime
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\System.Threading.Tasks.Extensions.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Unity.Abstractions.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Unity.Container.dll
-F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Service.DataHandler.dll
-F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Service.DataHandler.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Microsoft.Xaml.Behaviors.xml
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Prism.pdb
@@ -76,3 +74,7 @@ F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.Detail
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.DetailPageModule.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Newtonsoft.Json.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\Newtonsoft.Json.xml
+F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\obj\Debug\Views\SettingView.g.cs
+F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\obj\Debug\Views\SettingView.baml
+F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Service.dll
+F:\Project\Note_App\NoteWpfApp\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Service.pdb

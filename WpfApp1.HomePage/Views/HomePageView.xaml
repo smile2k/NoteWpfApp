@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.HomePageModule.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="600" d:DesignWidth="800"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:viewModels="clr-namespace:WpfApp1.HomePageModule.ViewModels"
              d:DataContext="{d:DesignInstance Type=viewModels:HomePageViewModel}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="42"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -24,19 +24,19 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>-->
             <StackPanel Orientation="Horizontal">
-                <Button Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="0"
-        Command="{Binding OpenHomePageCommand}">
-                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_home.png" Stretch="Uniform"></Image>
+                <Button Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0"  Padding="0"
+                        Background="White" Command="{Binding OpenHomePageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_home_50.png" Stretch="Uniform"></Image>
                 </Button>
-                <Button Grid.Column="1" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-        Command="{Binding OpenSettingPageCommand}">
-                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_setting.png" Stretch="Uniform"/>
+                <Button Grid.Column="1" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+                        Background="White" Command="{Binding OpenSettingPageCommand}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_setting_50.png" Stretch="Uniform"/>
                 </Button>
-                <Button Grid.Column="2" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+                <Button Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
         Command="{Binding OpenToDoPageCommand}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icn_todo.png" Stretch="Fill"></Image>
                 </Button>
-                <Button Grid.Column="3" Height="30" Width="30" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+                <Button Grid.Column="3" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
         Command="{Binding OpenExpensePageCommand}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/finance.jpg" Stretch="Fill"></Image>
                 </Button>

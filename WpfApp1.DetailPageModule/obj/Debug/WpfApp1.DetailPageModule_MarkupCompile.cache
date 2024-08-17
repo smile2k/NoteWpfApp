@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-3-737941265
+4-14468002
 
-9806041845
-128-961819731
-Views\DetailPageView.xaml;Views\ExpensePageView.xaml;Views\ToDoPageView.xaml;
+1230914121
+128-1425982337
+Views\DetailPageView.xaml;Views\ExpensePageView.xaml;Views\ToDoPageView.xaml;Views\SettingView.xaml;
 
 False
 

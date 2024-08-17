@@ -8,7 +8,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Unity;
-using Prism.Ioc;
 using System.ComponentModel;
 using Prism.Mvvm;
 using WpfApp1.Service;
@@ -36,6 +35,7 @@ namespace WpfApp1.MainWindow
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.DetailPageView>();
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.ToDoPageView>();
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.ExpensePageView>();
+            containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.SettingView>();
         }
 
         protected override void ConfigureViewModelLocator()
@@ -47,6 +47,7 @@ namespace WpfApp1.MainWindow
             ViewModelLocationProvider.Register<DetailPageModule.Views.DetailPageView, DetailPageModule.ViewModels.DetailPageViewModel>();
             ViewModelLocationProvider.Register<DetailPageModule.Views.ToDoPageView, DetailPageModule.ViewModels.ToDoPageViewModel>();
             ViewModelLocationProvider.Register<DetailPageModule.Views.ExpensePageView, DetailPageModule.ViewModels.ExpensePageViewModel>();
+            ViewModelLocationProvider.Register<DetailPageModule.Views.SettingView, DetailPageModule.ViewModels.SettingViewModel>();
         }
 
         //protected override void OnStartup(StartupEventArgs e)

@@ -56,11 +56,9 @@ F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Unity.Container.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Based.Common.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.DetailPageModule.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.HomePage.dll
-F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Service.DataHandler.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Based.Common.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.DetailPageModule.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.HomePage.pdb
-F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Service.DataHandler.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Microsoft.Xaml.Behaviors.xml
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Prism.pdb
@@ -89,3 +87,5 @@ F:\Project\Note_App\NoteWpfApp\WpfApp1\obj\Debug\WpfApp1.exe
 F:\Project\Note_App\NoteWpfApp\WpfApp1\obj\Debug\WpfApp1.pdb
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Newtonsoft.Json.dll
 F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\Newtonsoft.Json.xml
+F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Service.dll
+F:\Project\Note_App\NoteWpfApp\WpfApp1\bin\Debug\WpfApp1.Service.pdb

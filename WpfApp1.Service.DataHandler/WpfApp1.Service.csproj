@@ -7,8 +7,8 @@
     <ProjectGuid>{199D98E3-942F-461D-B50F-C0C79D55401B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApp1.Service.DataHandler</RootNamespace>
-    <AssemblyName>WpfApp1.Service.DataHandler</AssemblyName>
+    <RootNamespace>WpfApp1.Service</RootNamespace>
+    <AssemblyName>WpfApp1.Service</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

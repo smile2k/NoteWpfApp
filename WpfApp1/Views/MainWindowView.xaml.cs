@@ -31,6 +31,7 @@ namespace WpfApp1.MainWindow.Views
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.DetailPageView));
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.ToDoPageView));
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.ExpensePageView));
+            _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.SettingView));
         }
     }
 }

@@ -74,10 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\ColorItem.cs" />
     <Compile Include="Models\TaskToDo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\ExpensePageViewModel.cs" />
+    <Compile Include="ViewModels\SettingViewModel.cs" />
     <Compile Include="ViewModels\ToDoPageViewModel.cs" />
     <Compile Include="Views\DetailPageView.xaml.cs">
       <DependentUpon>DetailPageView.xaml</DependentUpon>
@@ -87,6 +89,9 @@
     </Compile>
     <Compile Include="Views\ToDoPageView.xaml.cs">
       <DependentUpon>ToDoPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
@@ -111,6 +120,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_add_50.png" />
+    <Resource Include="Resources\icon_save_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_delete_50.png" />
+    <Resource Include="Resources\icon_edit_50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
