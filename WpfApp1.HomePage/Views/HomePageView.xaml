@@ -33,11 +33,16 @@
                     <Image Source="/WpfApp1.HomePage;component/Resources/icon_setting_50.png" Stretch="Uniform"/>
                 </Button>
                 <Button Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-        Command="{Binding OpenToDoPageCommand}">
+                        Command="{Binding OpenToDoPageCommand}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icn_todo.png" Stretch="Fill"></Image>
                 </Button>
-                <Button Grid.Column="3" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-        Command="{Binding OpenExpensePageCommand}">
+                <Button Grid.Column="3" 
+                        Height="40" 
+                        Width="40" 
+                        HorizontalAlignment="Left" 
+                        BorderThickness="0" 
+                        Padding="1"
+                        Command="{Binding OpenExpensePageCommand}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/finance.jpg" Stretch="Fill"></Image>
                 </Button>
             </StackPanel>

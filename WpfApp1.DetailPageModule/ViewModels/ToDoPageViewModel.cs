@@ -21,10 +21,9 @@ namespace WpfApp1.DetailPageModule.ViewModels
     public class ToDoPageViewModel : BindableBase
     {
         #region Fields
-
+        
         private IDataHandlerService _dataHandler;
         private IRegionManager _regionManager;
-
 
         #endregion
 
@@ -82,6 +81,7 @@ namespace WpfApp1.DetailPageModule.ViewModels
                 new ColorItem { Name = "Yellow", Color = Brushes.LightYellow },
                 new ColorItem { Name = "Blue", Color = Brushes.Blue },
                 new ColorItem { Name = "White", Color = Brushes.White },
+                new ColorItem { Name = "Black", Color = Brushes.Black }
                 // Add more colors as needed
             };
 
@@ -116,7 +116,7 @@ namespace WpfApp1.DetailPageModule.ViewModels
         {
             TaskList.Add(new TaskToDo { Id = Guid.NewGuid(), IsCompleted = false, Name = "", Datetime = DateTime.Now.ToString() }); ;
         }
-        #endregion
+        
 
         private void SaveTaskTable()
         {
@@ -168,8 +168,9 @@ namespace WpfApp1.DetailPageModule.ViewModels
                 SelectedColor = brush;
             }
         }
+        #endregion
 
-        
+
 
         #region FUNCTIONs SUPPORT
         private string GetModelFolderPath()

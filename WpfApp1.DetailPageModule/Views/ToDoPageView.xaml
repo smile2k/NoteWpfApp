@@ -165,9 +165,19 @@
         <Popup x:Name="detailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
                IsOpen="{Binding ShowPopup}">
             <Border Background="White" BorderBrush="Black" BorderThickness="1" Padding="10">
-                <TextBlock x:Name="popupContent" TextWrapping="Wrap"
+                <Grid Width="300" MinWidth="200">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Content="X" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Row="1" x:Name="popupContent" TextWrapping="Wrap"
                            Text="{Binding DetailPopupText}"/>
+                    <Button Grid.Row="2" Content="Hai"/>
+                </Grid>
             </Border>
+            
         </Popup>
 
     </Grid>

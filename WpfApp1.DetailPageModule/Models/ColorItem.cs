@@ -12,4 +12,5 @@ namespace WpfApp1.DetailPageModule.Models
         public string Name { get; set; }
         public Brush Color { get; set; }
     }
+
 }
