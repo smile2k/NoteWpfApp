@@ -18,9 +18,9 @@ namespace WpfApp1.DetailPageModule.Views
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class SettingView : UserControl
+    public partial class MenuPageView : UserControl
     {
-        public SettingView()
+        public MenuPageView()
         {
             InitializeComponent();
         }

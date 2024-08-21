@@ -98,3 +98,5 @@ C:\Users\PC\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.MainWindow.csproj.Cop
 C:\Users\PC\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\PC\source\repos\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\PC\source\repos\WpfApp1\WpfApp1\bin\Debug\vi\ResourcesLibrary.resources.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1\bin\Debug\WpfApp1.MenuOption.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1\bin\Debug\WpfApp1.MenuOption.pdb

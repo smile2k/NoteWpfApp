@@ -80,9 +80,8 @@ namespace WpfApp1.DetailPageModule.ViewModels
                 new ColorItem { Name = "Pink", Color = Brushes.Pink },
                 new ColorItem { Name = "Green", Color = Brushes.LightGreen },
                 new ColorItem { Name = "Yellow", Color = Brushes.LightYellow },
-                new ColorItem { Name = "Blue", Color = Brushes.Blue },
+                new ColorItem { Name = "Blue", Color = Brushes.LightBlue },
                 new ColorItem { Name = "White", Color = Brushes.White },
-                new ColorItem { Name = "Black", Color = Brushes.Black }
                 // Add more colors as needed
             };
 

@@ -132,6 +132,10 @@
       <Project>{43643e95-d828-40de-9447-651432abaf63}</Project>
       <Name>WpfApp1.HomePageModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WpfApp1.MenuOption\WpfApp1.MenuOption.csproj">
+      <Project>{50aa7cd6-2d86-46bc-ae51-cbba8176e65f}</Project>
+      <Name>WpfApp1.MenuOption</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
       <Project>{199d98e3-942f-461d-b50f-c0c79d55401b}</Project>
       <Name>WpfApp1.Service</Name>

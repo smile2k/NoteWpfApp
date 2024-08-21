@@ -73,12 +73,10 @@ C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.Deta
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\DetailPageView.g.cs
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\ExpensePageView.g.cs
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\ToDoPageView.g.cs
-C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\SettingView.g.cs
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.DetailPageModule_MarkupCompile.cache
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.DetailPageModule_MarkupCompile.lref
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\DetailPageView.baml
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\ExpensePageView.baml
-C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\SettingView.baml
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.DetailPageModule.dll
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.DetailPageModule.pdb
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.DetailPageModule.dll
@@ -147,3 +145,7 @@ C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\WpfApp1.Deta
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\vi\ResourcesLibrary.resources.dll
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Based.Common.dll
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.Based.Common.pdb
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\MenuPageView.g.cs
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\obj\Debug\Views\MenuPageView.baml
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.MenuOption.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.DetailPageModule\bin\Debug\WpfApp1.MenuOption.pdb

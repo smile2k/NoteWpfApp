@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\bin\Debug\WpfApp1.MenuOption.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\bin\Debug\WpfApp1.MenuOption.pdb
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\InformationView.g.cs
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\NothingView.g.cs
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\SettingView.g.cs
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption_MarkupCompile.cache
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption_MarkupCompile.lref
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\InformationView.baml
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\NothingView.baml
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\Views\SettingView.baml
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption.g.resources
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.MenuOption\obj\Debug\WpfApp1.MenuOption.pdb

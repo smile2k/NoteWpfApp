@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="WpfApp1.DetailPageModule.Views.MenuPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:WpfApp1.DetailPageModule.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="558" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0">
+            <StackPanel Orientation="Vertical" Background="#676767">
+                <!-- Settings -->
+                <CheckBox IsChecked="{Binding IsShowSetting}" Command="{Binding ToggleShowSettingCommand}">
+                    <CheckBox.Style>
+                        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="52"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <!--<Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"
+                                                   Source="/Dashboard.OptionMenuModule;component/Resources/icn_setting_p.png"
+                                                   Width="25"
+                                                   Height="25"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="0 0 10 0"/>-->  
+                                            <TextBlock Grid.Column="1" Text="Settings" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" Value="#676767"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Height" Value="50"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#404454"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#404454"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Style>
+                </CheckBox>
+
+                <!-- Information -->
+                <CheckBox IsChecked="{Binding IsShowInformation}"
+                  Command="{Binding ToggleShowInformationCommand}">
+                    <CheckBox.Style>
+                        <Style TargetType="{x:Type CheckBox}"
+                       BasedOn="{StaticResource {x:Type ToggleButton}}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="52"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"
+                                           Source="/Dashboard.OptionMenuModule;component/Resources/ic_info@3x.png"
+                                           Width="25"
+                                           Height="25"
+                                           HorizontalAlignment="Right"
+                                           Margin="0 0 10 0"/>
+                                            <TextBlock Grid.Column="1" Text="Information"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" Value="#676767"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Height" Value="50"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#404454"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#404454"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Style>
+
+                </CheckBox>
+            </StackPanel>
+        </Border>
+
+        <!-- Content region base on selection -->
+        <UserControl Grid.Column="1"
+             prism:RegionManager.RegionName="MenuContentRegion"/>
+    </Grid>
+</UserControl>

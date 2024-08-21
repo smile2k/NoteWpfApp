@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-4-14468002
+4419401800
 
-15-1269024675
-143-121572811
-Views\DetailPageView.xaml;Views\ExpensePageView.xaml;Views\ToDoPageView.xaml;Views\SettingView.xaml;
+15-1941175655
+1441083134050
+Views\DetailPageView.xaml;Views\ExpensePageView.xaml;Views\ToDoPageView.xaml;Views\MenuPageView.xaml;
 
 True
 

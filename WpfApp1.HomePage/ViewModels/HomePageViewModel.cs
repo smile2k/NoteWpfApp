@@ -28,7 +28,7 @@ namespace WpfApp1.HomePageModule.ViewModels
             _regionManager = regionManager;
 
             this.OpenHomePageCommand = new DelegateCommand(OpenHomePage);
-            this.OpenSettingPageCommand = new DelegateCommand(OpenSettingPage);
+            this.OpenMenuPageCommand = new DelegateCommand(OpenMenuPage);
             this.OpenToDoPageCommand = new DelegateCommand(OpenToDoPage);
             this.OpenExpensePageCommand = new DelegateCommand(OpenExpensePage);
         }
@@ -69,7 +69,7 @@ namespace WpfApp1.HomePageModule.ViewModels
 
         #region Commands
         public ICommand OpenHomePageCommand { get; }
-        public ICommand OpenSettingPageCommand { get; }
+        public ICommand OpenMenuPageCommand { get; }
         public ICommand OpenToDoPageCommand { get; }
         public ICommand OpenExpensePageCommand { get; }
         #endregion
@@ -86,13 +86,13 @@ namespace WpfApp1.HomePageModule.ViewModels
             _regionManager.RequestNavigate("DetailPageRegion", "DetailPageView");
         }
 
-        private void OpenSettingPage()
+        private void OpenMenuPage()
         {
             HomePageIsChecked = false;
             SettingPageIsChecked = true;
             TodoPageIsChecked = false;
             ExpensePageIsChecked = false;
-            _regionManager.RequestNavigate("DetailPageRegion", "SettingView");
+            _regionManager.RequestNavigate("DetailPageRegion", "MenuPageView");
         }
 
         private void OpenToDoPage()

@@ -35,7 +35,10 @@ namespace WpfApp1.MainWindow
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.DetailPageView>();
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.ToDoPageView>();
             containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.ExpensePageView>();
-            containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.SettingView>();
+            containerRegistry.RegisterForNavigation<WpfApp1.DetailPageModule.Views.MenuPageView>();
+            containerRegistry.RegisterForNavigation<MenuOption.Views.SettingView>();
+            containerRegistry.RegisterForNavigation<MenuOption.Views.InformationView>();
+            containerRegistry.RegisterForNavigation<MenuOption.Views.NothingView>();
         }
 
         protected override void ConfigureViewModelLocator()
@@ -47,7 +50,10 @@ namespace WpfApp1.MainWindow
             ViewModelLocationProvider.Register<DetailPageModule.Views.DetailPageView, DetailPageModule.ViewModels.DetailPageViewModel>();
             ViewModelLocationProvider.Register<DetailPageModule.Views.ToDoPageView, DetailPageModule.ViewModels.ToDoPageViewModel>();
             ViewModelLocationProvider.Register<DetailPageModule.Views.ExpensePageView, DetailPageModule.ViewModels.ExpensePageViewModel>();
-            ViewModelLocationProvider.Register<DetailPageModule.Views.SettingView, DetailPageModule.ViewModels.SettingViewModel>();
+            ViewModelLocationProvider.Register<DetailPageModule.Views.MenuPageView, DetailPageModule.ViewModels.MenuPageViewModel>();
+            ViewModelLocationProvider.Register<MenuOption.Views.SettingView, MenuOption.ViewModels.SettingViewModel>();
+            ViewModelLocationProvider.Register<MenuOption.Views.InformationView, MenuOption.ViewModels.InformationViewModel>();
+            ViewModelLocationProvider.Register<MenuOption.Views.NothingView, MenuOption.ViewModels.NothingViewModel>();
         }
 
         //protected override void OnStartup(StartupEventArgs e)

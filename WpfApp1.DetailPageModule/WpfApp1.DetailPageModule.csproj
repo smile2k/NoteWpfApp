@@ -13,9 +13,6 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)*.dll" "..\StartupProject\bin\$(Configuration)\"</PostBuildEvent>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -32,15 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupProjectName>$([System.IO.Path]::GetFileName($(SolutionDir.TrimEnd('\'))))</StartupProjectName>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>
-    xcopy /Y "$(TargetDir)LiveCharts.Wpf.dll" "$(SolutionDir)$(StartupProjectName)\bin\$(Configuration)"
-    xcopy /Y "$(TargetDir)LiveCharts.dll" "$(SolutionDir)$(StartupProjectName)\bin\$(Configuration)"
-    </PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetProjects.DataVisualization.Toolkit, Version=6.1.94.0, Culture=neutral, PublicKeyToken=79778c5f2eed289b, processorArchitecture=MSIL">
@@ -128,7 +116,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DetailPageViewModel.cs" />
     <Compile Include="ViewModels\ExpensePageViewModel.cs" />
-    <Compile Include="ViewModels\SettingViewModel.cs" />
+    <Compile Include="ViewModels\MenuPageViewModel.cs" />
     <Compile Include="ViewModels\ToDoPageViewModel.cs" />
     <Compile Include="Views\DetailPageView.xaml.cs">
       <DependentUpon>DetailPageView.xaml</DependentUpon>
@@ -139,8 +127,8 @@
     <Compile Include="Views\ToDoPageView.xaml.cs">
       <DependentUpon>ToDoPageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SettingView.xaml.cs">
-      <DependentUpon>SettingView.xaml</DependentUpon>
+    <Compile Include="Views\MenuPageView.xaml.cs">
+      <DependentUpon>MenuPageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -156,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SettingView.xaml">
+    <Page Include="Views\MenuPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +165,10 @@
     <ProjectReference Include="..\WpfApp1.Based.Common\WpfApp1.Based.Common.csproj">
       <Project>{5db47462-bc9d-4b13-91b4-441b7631a856}</Project>
       <Name>WpfApp1.Based.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfApp1.MenuOption\WpfApp1.MenuOption.csproj">
+      <Project>{50AA7CD6-2D86-46BC-AE51-CBBA8176E65F}</Project>
+      <Name>WpfApp1.MenuOption</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
       <Project>{199d98e3-942f-461d-b50f-c0c79d55401b}</Project>

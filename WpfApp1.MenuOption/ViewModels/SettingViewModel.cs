@@ -1,13 +1,12 @@
-﻿using Prism.Mvvm;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1.DetailPageModule.ViewModels
+namespace WpfApp1.MenuOption.ViewModels
 {
-    public class SettingViewModel : BindableBase
+    public class SettingViewModel
     {
 
         public SettingViewModel() 

@@ -8,13 +8,14 @@
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="558" d:DesignWidth="800">
+    <Grid Background="#F0F0F0">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="400*" MinHeight="200"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="400*" MinHeight="300"/>
+            <RowDefinition Height="*" MinHeight="200"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*" MinHeight="200"/>
+            <!--<RowDefinition Height="5" MinHeight="5"/>-->
         </Grid.RowDefinitions>
 
         <!--Menu-->
@@ -96,17 +97,19 @@
                   Grid.Row="1" ItemsSource="{Binding ExpenseList}" 
                   RowHeight="30" Background="{Binding SelectedColor}"
                   AutoGenerateColumns="False" CanUserAddRows="False"
-                  RowHeaderWidth="0"
+                  RowHeaderWidth="0" BorderThickness="5"
+                  HorizontalGridLinesBrush="#E6E7E9" VerticalGridLinesBrush="#E6E7E9"
                   HorizontalScrollBarVisibility="Auto" 
                   AlternationCount="2" AlternatingRowBackground="#FAFAFA">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    
                 </Style>
                 <Style TargetType="DataGridCell">
                     <Setter Property="Background" Value="#FAFAFA"/>
                     <Setter Property="Foreground" Value="DarkBlue"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="#E6F7FF"/>
                     <Setter Property="BorderThickness" Value="0"/>
                 </Style>
             </DataGrid.Resources>
@@ -132,9 +135,14 @@
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
                 <!--Note-->
-                <DataGridTextColumn Header="Note" Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" >
-
-                </DataGridTextColumn>
+                <DataGridTemplateColumn Header="Note" Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 
                 <!--Type-->
                 <DataGridTemplateColumn  Header="Expense Type" Width="150" >
@@ -214,24 +222,32 @@
         <!--Splitter-->
         <GridSplitter Grid.Row="2"
                   ResizeBehavior="PreviousAndNext"
-                  Height="2"
+                  Height="5"
                   Width="Auto"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Stretch"
                   Background="LightGray"/>
         
         <!--Chart-->
-        <Grid Grid.Row="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition/>
-                <RowDefinition Height="10"/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Summary" FontSize="18" FontFamily="SegoeUI-Semibold" FontWeight="Bold"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Grid.Row="3" BorderThickness="5" BorderBrush="#688CAF">
+            <Grid Grid.Row="3" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*" MaxHeight="400"/>
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0" CornerRadius="2">
+                    <TextBlock Grid.Row="0" Text="Summary" FontSize="18" FontFamily="SegoeUI-Semibold" FontWeight="Bold"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
 
-            <lvc:PieChart Grid.Row="1" Series="{Binding PieSeries}" LegendLocation="Right" />
-        </Grid>
+                <Border Grid.Row="1" >
+                    <lvc:PieChart Grid.Row="1" Series="{Binding PieSeries}" LegendLocation="Right"/>
+                </Border>
+
+            </Grid>
+        </Border>
+        
+        <!--<Grid Grid.Row="4" Background="LightGreen"></Grid>-->
         
         <!-- Popup Control -->
         <Popup x:Name="detailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
