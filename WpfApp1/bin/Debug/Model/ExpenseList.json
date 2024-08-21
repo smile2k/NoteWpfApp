@@ -1,37 +1,23 @@
 [
   {
-    "Id": "c1a25a02-e7d8-4a11-95cd-d4df85946885",
-    "Name": "",
-    "Datetime": "14/8/2024",
-    "Amount": 0.0,
-    "ExpenseType": null
+    "Id": "7e777c02-77d8-4883-bc42-29fb52b0be98",
+    "Name": "A",
+    "Datetime": "21/8/2024",
+    "Amount": "10",
+    "ExpenseType": "General"
   },
   {
-    "Id": "dabef910-61f0-4d02-8b9d-c22e31ec69c8",
-    "Name": "",
-    "Datetime": "16/8/2024",
-    "Amount": 0.0,
-    "ExpenseType": null
+    "Id": "ab71010d-95a3-4a95-bc14-81c18178ebbd",
+    "Name": "B",
+    "Datetime": "21/8/2024",
+    "Amount": "20",
+    "ExpenseType": "Transport"
   },
   {
-    "Id": "10afb0b8-f41f-4e95-8e63-ff995a7dd1e3",
-    "Name": "",
-    "Datetime": "15/8/2024",
-    "Amount": 0.0,
-    "ExpenseType": null
-  },
-  {
-    "Id": "99dfb9ff-ddd1-430a-b5ea-7dc9c301d75f",
-    "Name": "",
-    "Datetime": "17/8/2024",
-    "Amount": 0.0,
-    "ExpenseType": null
-  },
-  {
-    "Id": "0cbf6915-beb6-4df1-ac20-cee258ce439a",
-    "Name": "",
-    "Datetime": "18/8/2024",
-    "Amount": 0.0,
-    "ExpenseType": ""
+    "Id": "af50951f-cbd6-4d7c-a5c4-0f3a9a99bbe8",
+    "Name": "C",
+    "Datetime": "21/8/2024",
+    "Amount": "30",
+    "ExpenseType": "Transport"
   }
 ]

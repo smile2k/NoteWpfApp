@@ -14,6 +14,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using WpfApp1.DetailPageModule.Models;
 using WpfApp1.Service;
+using LiveCharts;
+using LiveCharts.Wpf;
+using WpfApp1.Based.Common;
 
 namespace WpfApp1.DetailPageModule.ViewModels
 {
@@ -78,12 +81,36 @@ namespace WpfApp1.DetailPageModule.ViewModels
             }
         }
 
-        private ObservableCollection<PieChartItem> _pieChartItemList;
-        public ObservableCollection<PieChartItem> PieChartItemList
+        private ObservableCollection<string> _expenseOptions;
+        public ObservableCollection<string> ExpenseOptions
         {
-            get => _pieChartItemList;
-            set => SetProperty(ref _pieChartItemList, value);
+            get => _expenseOptions;
+            set => SetProperty(ref _expenseOptions, value);
         }
+
+        private string _selectedExpenseOption;
+        public string SelectedExpenseOption
+        {
+            get => _selectedExpenseOption;
+            set
+            {
+                _selectedExpenseOption = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        //private string _expenseType;
+        //public string ExpenseType
+        //{
+        //    get => _expenseType;
+        //    set
+        //    {
+        //        _expenseType = value;
+        //        RaisePropertyChanged();
+        //    }
+        //}
+
+        public SeriesCollection PieSeries { get; set; }
         #endregion
 
         public ExpensePageViewModel(IDataHandlerService dataHandler, IRegionManager regionManager) 
@@ -91,9 +118,20 @@ namespace WpfApp1.DetailPageModule.ViewModels
             _dataHandler = dataHandler;
             _regionManager = regionManager;
             expenseItemSelected = new ExpenseItem();
-            PieChartItemList = new ObservableCollection<PieChartItem>();
+            PieSeries = new SeriesCollection();
+            ExpenseOptions = new ObservableCollection<string> 
+            {
+                ExpenseTypeEnum.General.ToString(),
+                ExpenseTypeEnum.Food.ToString(),
+                ExpenseTypeEnum.Transport.ToString(),
+                ExpenseTypeEnum.Gift.ToString(),
+                ExpenseTypeEnum.Rent.ToString(),
+                ExpenseTypeEnum.Healthcare.ToString(),
+            };
+            SelectedExpenseOption = ExpenseOptions.FirstOrDefault();
 
             LoadExpenseTable();
+            UpdatePieSeries();
 
             // Command
             this.DeleteRowCommand = new DelegateCommand<object>(DeleteRow);
@@ -101,6 +139,8 @@ namespace WpfApp1.DetailPageModule.ViewModels
             this.SaveExpenseTableCommand = new DelegateCommand(SaveExpenseTable);
             this.OpenDetailRowCommand = new DelegateCommand<object>(OpenDetailRow);
             this.ChangeBackgroundColorCommand = new DelegateCommand<object>(ChangeBackgroundColor);
+            this.LostFocusAmountColumnCommand = new DelegateCommand<object>(LostFocusAmountColumn);
+            this.LostFocusExpenseTypeColumnCommand = new DelegateCommand<object>(LostFocusExpenseTypeColumn);
         }
 
         #region Commands
@@ -109,20 +149,22 @@ namespace WpfApp1.DetailPageModule.ViewModels
         public ICommand SaveExpenseTableCommand { get; set; }
         public ICommand OpenDetailRowCommand { get; set; }
         public ICommand ChangeBackgroundColorCommand { get; set; }
+        public ICommand LostFocusAmountColumnCommand { get; set; }
+        public ICommand LostFocusExpenseTypeColumnCommand { get; set; }
 
         #endregion
 
         #region Methods
         private void DeleteRow(object obj)
         {
-            var taskNeedToDelete = (ExpenseItem)obj;
+            var taskNeedToDelete = obj as ExpenseItem;
             ExpenseList.Remove(taskNeedToDelete);
         }
 
         private void AddRow()
         {
             var day = DateTime.Now.Day.ToString()+"/"+ DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-            ExpenseList.Add(new ExpenseItem { Id = Guid.NewGuid(), Name = "", Datetime = day, Amount = 0, ExpenseType = "" }); ;
+            ExpenseList.Add(new ExpenseItem { Id = Guid.NewGuid(), Name = "", Datetime = day, Amount = "0", ExpenseType = ExpenseTypeEnum.General.ToString() }); ;
         }
 
         private void SaveExpenseTable()
@@ -173,8 +215,8 @@ namespace WpfApp1.DetailPageModule.ViewModels
         {
             try
             {
-                UpdatePieChart();
-                var detailTask = (ExpenseItem)obj;
+                //UpdatePieSeries();
+                var detailTask = obj as ExpenseItem;
                 expenseItemSelected = detailTask;
 
                 //ShowPopup = true;
@@ -182,6 +224,49 @@ namespace WpfApp1.DetailPageModule.ViewModels
             catch
             {
                 ShowPopup = false;
+            }
+        }
+
+        private void LostFocusAmountColumn(object rowSelected)
+        {
+            try
+            {
+                var expenseItem = rowSelected as ExpenseItem;
+                expenseItemSelected = expenseItem;
+
+                bool convertToDouble = double.TryParse(expenseItem.Amount, out var money);
+                if (convertToDouble)
+                {
+                    if (money < 0)
+                    {
+                        var row = ExpenseList.Where(p => p.Id == expenseItemSelected.Id).FirstOrDefault();
+                        row.Amount = "0";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Enter numbers only!", "Update Chart", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    var row = ExpenseList.Where(p => p.Id == expenseItemSelected.Id).FirstOrDefault();
+                    row.Amount = "0";
+                }
+
+                UpdatePieSeries();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Update Chart Fail!", "Update Chart", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void LostFocusExpenseTypeColumn(object rowSelected)
+        {
+            try
+            {
+                UpdatePieSeries();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Update Chart Fail!", "Update Chart", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -193,13 +278,44 @@ namespace WpfApp1.DetailPageModule.ViewModels
             }
         }
 
-        private void UpdatePieChart()
+        private void UpdatePieSeries()
         {
-            PieChartItemList.Clear();
-            PieChartItemList.Add(new PieChartItem { Title = "Mango", Value = 10 });
-            PieChartItemList.Add(new PieChartItem { Title = "Banana", Value = 36 });
-        }
+            try
+            {
+                PieSeries.Clear();
+                Random random = new Random();
 
+                var expensesByType = ExpenseList.GroupBy(e => e.ExpenseType)
+                                         .ToDictionary(g => g.Key, g => g.ToList());
+
+                foreach (var data in expensesByType)
+                {
+                    Color randomColor = Color.FromRgb(
+                    (byte)random.Next(0, 256),
+                    (byte)random.Next(0, 256),
+                    (byte)random.Next(0, 256));
+
+                    List<ExpenseItem> expenses = data.Value;
+                    double totalAmount = 0;
+                    foreach (var expense in expenses)
+                    {
+                        totalAmount += double.Parse(expense.Amount);
+                    }
+
+                    PieSeries.Add(new PieSeries
+                    {
+                        Title = data.Key.ToString(),
+                        Values = new ChartValues<double> { totalAmount },
+                        DataLabels = true,
+                        Fill = new SolidColorBrush(randomColor)
+                    });
+                }
+            }
+            catch
+            {
+                
+            }
+        }
         #endregion
 
         #region FUNCTIONs SUPPORT

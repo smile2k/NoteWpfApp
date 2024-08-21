@@ -9,6 +9,31 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:viewModels="clr-namespace:WpfApp1.HomePageModule.ViewModels"
              d:DataContext="{d:DesignInstance Type=viewModels:HomePageViewModel}">
+
+    <UserControl.Resources>
+        <!-- Định nghĩa Style cho Button -->
+        <Style TargetType="Button" x:Key="CustomButtonStyle">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="42"/>
@@ -24,27 +49,26 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>-->
             <StackPanel Orientation="Horizontal">
-                <Button Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0"  Padding="0"
-                        Background="White" Command="{Binding OpenHomePageCommand}">
+                <ToggleButton Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0"  Padding="0"
+                              Background="White"
+                              Command="{Binding OpenHomePageCommand}" IsChecked="{Binding HomePageIsChecked, Mode=TwoWay}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icon_home_50.png" Stretch="Uniform"></Image>
-                </Button>
-                <Button Grid.Column="1" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-                        Background="White" Command="{Binding OpenSettingPageCommand}">
+                </ToggleButton>
+                <ToggleButton Grid.Column="1" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+                              Background="White" 
+                              Command="{Binding OpenSettingPageCommand}" IsChecked="{Binding SettingPageIsChecked, Mode=TwoWay}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icon_setting_50.png" Stretch="Uniform"/>
-                </Button>
-                <Button Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-                        Command="{Binding OpenToDoPageCommand}">
-                    <Image Source="/WpfApp1.HomePage;component/Resources/icn_todo.png" Stretch="Fill"></Image>
-                </Button>
-                <Button Grid.Column="3" 
-                        Height="40" 
-                        Width="40" 
-                        HorizontalAlignment="Left" 
-                        BorderThickness="0" 
-                        Padding="1"
-                        Command="{Binding OpenExpensePageCommand}">
-                    <Image Source="/WpfApp1.HomePage;component/Resources/finance.jpg" Stretch="Fill"></Image>
-                </Button>
+                </ToggleButton>
+                <ToggleButton Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="0"
+                              Background="White"
+                              Command="{Binding OpenToDoPageCommand}" IsChecked="{Binding TodoPageIsChecked, Mode=TwoWay}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_todo_50.png" Stretch="Fill"></Image>
+                </ToggleButton>
+                <ToggleButton Grid.Column="3" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="0"
+                              Background="White"
+                              Command="{Binding OpenExpensePageCommand}" IsChecked="{Binding ExpensePageIsChecked, Mode=TwoWay}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_money_50.png" Stretch="Fill"></Image>
+                </ToggleButton>
             </StackPanel>
             
 

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.Based.Common", "Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1.DetailPageModule", "WpfApp1.DetailPageModule\WpfApp1.DetailPageModule.csproj", "{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesLibrary", "ResourcesLibrary\ResourcesLibrary.csproj", "{CFD520E0-A94A-4621-B9EA-EFA767FE3C92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD520E0-A94A-4621-B9EA-EFA767FE3C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD520E0-A94A-4621-B9EA-EFA767FE3C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD520E0-A94A-4621-B9EA-EFA767FE3C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD520E0-A94A-4621-B9EA-EFA767FE3C92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{43643E95-D828-40DE-9447-651432ABAF63} = {06AE84A1-81AF-4F74-913C-C4E852ACB41A}
 		{5DB47462-BC9D-4B13-91B4-441B7631A856} = {34BB3259-64A0-4B88-9D23-9F43CE675FE5}
 		{C15CDB47-7DCF-435E-AB77-FFBBC18364BF} = {06AE84A1-81AF-4F74-913C-C4E852ACB41A}
+		{CFD520E0-A94A-4621-B9EA-EFA767FE3C92} = {34BB3259-64A0-4B88-9D23-9F43CE675FE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E1F682D-DC99-4B27-8E04-3F352798A5F3}

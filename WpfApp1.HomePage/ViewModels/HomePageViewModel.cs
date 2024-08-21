@@ -35,6 +35,34 @@ namespace WpfApp1.HomePageModule.ViewModels
 
         #region Observable Properties
 
+        private bool _homePageIsChecked = true;
+        public bool HomePageIsChecked
+        {
+            get => _homePageIsChecked;
+            set => SetProperty(ref _homePageIsChecked, value);
+        }
+
+        private bool _settingPageIsChecked = false;
+        public bool SettingPageIsChecked
+        {
+            get => _settingPageIsChecked;
+            set => SetProperty(ref _settingPageIsChecked, value);
+        }
+
+        private bool _todoPageIsChecked = false;
+        public bool TodoPageIsChecked
+        {
+            get => _todoPageIsChecked;
+            set => SetProperty(ref _todoPageIsChecked, value);
+        }
+
+        private bool _expensePageIsChecked = false;
+        public bool ExpensePageIsChecked
+        {
+            get => _expensePageIsChecked;
+            set => SetProperty(ref _expensePageIsChecked, value);
+        }
+
         #endregion
 
 
@@ -51,21 +79,37 @@ namespace WpfApp1.HomePageModule.ViewModels
         #region Methods
         private void OpenHomePage()
         {
+            HomePageIsChecked = true;
+            SettingPageIsChecked = false;
+            TodoPageIsChecked = false;
+            ExpensePageIsChecked = false;
             _regionManager.RequestNavigate("DetailPageRegion", "DetailPageView");
         }
 
         private void OpenSettingPage()
         {
+            HomePageIsChecked = false;
+            SettingPageIsChecked = true;
+            TodoPageIsChecked = false;
+            ExpensePageIsChecked = false;
             _regionManager.RequestNavigate("DetailPageRegion", "SettingView");
         }
 
         private void OpenToDoPage()
         {
+            HomePageIsChecked = false;
+            SettingPageIsChecked = false;
+            TodoPageIsChecked = true;
+            ExpensePageIsChecked = false;
             _regionManager.RequestNavigate("DetailPageRegion", "ToDoPageView");
         }
 
         private void OpenExpensePage()
         {
+            HomePageIsChecked = false;
+            SettingPageIsChecked = false;
+            TodoPageIsChecked = false;
+            ExpensePageIsChecked = true;
             _regionManager.RequestNavigate("DetailPageRegion", "ExpensePageView");
         }
         #endregion

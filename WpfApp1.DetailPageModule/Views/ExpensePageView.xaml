@@ -5,15 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.DetailPageModule.Views"
              xmlns:behaviors="clr-namespace:WpfApp1.DetailPageModule.Views"
-             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-             xmlns:oxy="http://oxyplot.org/wpf"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="400*"/>
-            <RowDefinition Height="400*"/>
+            <RowDefinition Height="400*" MinHeight="200"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="400*" MinHeight="300"/>
         </Grid.RowDefinitions>
 
         <!--Menu-->
@@ -91,9 +92,11 @@
         </Border>
 
         <!--Content-->
-        <DataGrid Grid.Row="1" ItemsSource="{Binding ExpenseList}" 
+        <DataGrid x:Name="ExpenseDataGrid"
+                  Grid.Row="1" ItemsSource="{Binding ExpenseList}" 
                   RowHeight="30" Background="{Binding SelectedColor}"
                   AutoGenerateColumns="False" CanUserAddRows="False"
+                  RowHeaderWidth="0"
                   HorizontalScrollBarVisibility="Auto" 
                   AlternationCount="2" AlternatingRowBackground="#FAFAFA">
             <DataGrid.Resources>
@@ -109,7 +112,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Visibility="Hidden"/>
-                
+                <!--Date-->
                 <DataGridTemplateColumn Header="Date" MinWidth="70">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -119,8 +122,6 @@
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <!--<DatePicker SelectedDate="{Binding Datetime, Mode=TwoWay, StringFormat={}{0:dd/MM/yyyy}}" 
-                                        />-->
                             <Button Content="{Binding Datetime}" MinWidth="30" FontFamily="SegoeUI-Semibold"
                                     BorderThickness="0" Background="White"
                                     Command="{Binding DataContext.OpenDetailRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
@@ -130,20 +131,57 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                
+                <!--Note-->
                 <DataGridTextColumn Header="Note" Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*" >
 
                 </DataGridTextColumn>
+                
+                <!--Type-->
+                <DataGridTemplateColumn  Header="Expense Type" Width="150" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ExpenseType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding DataContext.ExpenseOptions, ElementName=ExpenseDataGrid}" 
+                                      SelectedItem="{Binding Path=ExpenseType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.LostFocusExpenseTypeColumnCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                                               CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="ExpenseType" Binding="{Binding ExpenseType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" >
+                <!--Amount-->
+                <DataGridTemplateColumn Header="Amount" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
 
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Header="Amount" Binding="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" >
-
-                </DataGridTextColumn>
-                <!--<DataGridTextColumn Header="DateTime" Binding="{Binding Datetime}"/>-->
-
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="LostFocus">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.LostFocusAmountColumnCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                               CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
 
                 <DataGridTemplateColumn MinWidth="30">
                     <DataGridTemplateColumn.CellTemplate>
@@ -173,24 +211,26 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Grid Grid.Row="2">
+        <!--Splitter-->
+        <GridSplitter Grid.Row="2"
+                  ResizeBehavior="PreviousAndNext"
+                  Height="2"
+                  Width="Auto"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Stretch"
+                  Background="LightGray"/>
+        
+        <!--Chart-->
+        <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Summary" FontSize="18" FontFamily="SegoeUI-Semibold" FontWeight="Bold"
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-            <!--<xctk:Pie x:Name="foobar" Grid.Row="1"
-                  DataContext="{Binding PieChartItemList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
-            </xctk:Pie>-->
-            <!--<chartingToolkit:Chart Margin="0" Title="Chart Title" DataContext="{Binding PieChartItemList}">
-                <chartingToolkit:PieSeries ItemsSource="{Binding}" 
-                                   DependentValuePath="Title" 
-                                   IndependentValuePath="Value">
-                </chartingToolkit:PieSeries>
-            </chartingToolkit:Chart>-->
-            
+            <lvc:PieChart Grid.Row="1" Series="{Binding PieSeries}" LegendLocation="Right" />
         </Grid>
         
         <!-- Popup Control -->

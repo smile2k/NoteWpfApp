@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)*.dll" "..\StartupProject\bin\$(Configuration)\"</PostBuildEvent>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -29,6 +32,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupProjectName>$([System.IO.Path]::GetFileName($(SolutionDir.TrimEnd('\'))))</StartupProjectName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    xcopy /Y "$(TargetDir)LiveCharts.Wpf.dll" "$(SolutionDir)$(StartupProjectName)\bin\$(Configuration)"
+    xcopy /Y "$(TargetDir)LiveCharts.dll" "$(SolutionDir)$(StartupProjectName)\bin\$(Configuration)"
+    </PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetProjects.DataVisualization.Toolkit, Version=6.1.94.0, Culture=neutral, PublicKeyToken=79778c5f2eed289b, processorArchitecture=MSIL">
@@ -48,6 +60,9 @@
     </Reference>
     <Reference Include="OxyPlot, Version=2.1.2.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
       <HintPath>..\packages\OxyPlot.Core.2.1.2\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2.1.2.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2.1.2\lib\net45\OxyPlot.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="OxyPlot.Wpf.Shared, Version=2.1.2.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
       <HintPath>..\packages\OxyPlot.Wpf.Shared.2.1.2\lib\net45\OxyPlot.Wpf.Shared.dll</HintPath>
@@ -147,9 +162,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\icon_add_50.png" />
     <Resource Include="Resources\icon_save_50.png" />
   </ItemGroup>
@@ -158,10 +170,21 @@
     <Resource Include="Resources\icon_edit_50.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ResourcesLibrary\ResourcesLibrary.csproj">
+      <Project>{cfd520e0-a94a-4621-b9ea-efa767fe3c92}</Project>
+      <Name>ResourcesLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfApp1.Based.Common\WpfApp1.Based.Common.csproj">
+      <Project>{5db47462-bc9d-4b13-91b4-441b7631a856}</Project>
+      <Name>WpfApp1.Based.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
       <Project>{199d98e3-942f-461d-b50f-c0c79d55401b}</Project>
       <Name>WpfApp1.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

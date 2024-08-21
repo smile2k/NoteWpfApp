@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using ResourcesLibrary;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -115,6 +116,7 @@ namespace WpfApp1.DetailPageModule.ViewModels
         private void AddRow()
         {
             TaskList.Add(new TaskToDo { Id = Guid.NewGuid(), IsCompleted = false, Name = "", Datetime = DateTime.Now.ToString() }); ;
+            //LanguageManager.ChangeCulture("vi-VN");
         }
         
 

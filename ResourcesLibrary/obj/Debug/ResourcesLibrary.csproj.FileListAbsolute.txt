@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\bin\Debug\ResourcesLibrary.dll
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\bin\Debug\ResourcesLibrary.pdb
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.dll
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.pdb
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\bin\Debug\vi\ResourcesLibrary.resources.dll
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.Resources.resources
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\ResourcesLibrary.Resources.vi.resources
+C:\Users\PC\source\repos\WpfApp1\ResourcesLibrary\obj\Debug\vi\ResourcesLibrary.resources.dll

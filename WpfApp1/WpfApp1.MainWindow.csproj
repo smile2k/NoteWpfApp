@@ -98,20 +98,11 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,6 +116,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ResourcesLibrary\ResourcesLibrary.csproj">
+      <Project>{cfd520e0-a94a-4621-b9ea-efa767fe3c92}</Project>
+      <Name>ResourcesLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Based.Common\WpfApp1.Based.Common.csproj">
       <Project>{5db47462-bc9d-4b13-91b4-441b7631a856}</Project>
       <Name>WpfApp1.Based.Common</Name>
@@ -134,7 +129,7 @@
       <Name>WpfApp1.DetailPageModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfApp1.HomePage\WpfApp1.HomePageModule.csproj">
-      <Project>{43643E95-D828-40DE-9447-651432ABAF63}</Project>
+      <Project>{43643e95-d828-40de-9447-651432abaf63}</Project>
       <Name>WpfApp1.HomePageModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
