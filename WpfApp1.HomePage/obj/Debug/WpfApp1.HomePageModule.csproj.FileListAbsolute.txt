@@ -106,3 +106,5 @@ C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\obj\Debug\WpfApp1.HomePageModu
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\obj\Debug\WpfApp1.HomePageModule.csproj.CopyComplete
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\obj\Debug\WpfApp1.HomePage.dll
 C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\obj\Debug\WpfApp1.HomePage.pdb
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\bin\Debug\WpfApp1.Based.Common.dll
+C:\Users\PC\source\repos\WpfApp1\WpfApp1.HomePage\bin\Debug\WpfApp1.Based.Common.pdb

@@ -31,7 +31,7 @@ namespace WpfApp1.MainWindow.Views
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.DetailPageView));
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.ToDoPageView));
             _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.ExpensePageView));
-            _regionManager.RegisterViewWithRegion("DetailPageRegion", typeof(WpfApp1.DetailPageModule.Views.MenuPageView));
+            _regionManager.RegisterViewWithRegion("MenuRegion", typeof(WpfApp1.DetailPageModule.Views.MenuPageView));
             _regionManager.RegisterViewWithRegion("MenuContentRegion", typeof(WpfApp1.MenuOption.Views.SettingView));
             _regionManager.RegisterViewWithRegion("MenuContentRegion", typeof(WpfApp1.MenuOption.Views.InformationView));
             _regionManager.RegisterViewWithRegion("MenuContentRegion", typeof(WpfApp1.MenuOption.Views.NothingView));

@@ -45,11 +45,18 @@ namespace WpfApp1.DetailPageModule.ViewModels
             }
         }
 
-        private bool _showPopup;
-        public bool ShowPopup
+        private bool _showDetailPopup;
+        public bool ShowDetailPopup
         {
-            get { return _showPopup; }
-            set { SetProperty(ref _showPopup, value); }
+            get { return _showDetailPopup; }
+            set { SetProperty(ref _showDetailPopup, value); }
+        }
+
+        private bool _showCalendarPopup;
+        public bool ShowCalendarPopup
+        {
+            get { return _showCalendarPopup; }
+            set { SetProperty(ref _showCalendarPopup, value); }
         }
 
         private Brush _selectedColor;
@@ -141,6 +148,7 @@ namespace WpfApp1.DetailPageModule.ViewModels
             this.ChangeBackgroundColorCommand = new DelegateCommand<object>(ChangeBackgroundColor);
             this.LostFocusAmountColumnCommand = new DelegateCommand<object>(LostFocusAmountColumn);
             this.LostFocusExpenseTypeColumnCommand = new DelegateCommand<object>(LostFocusExpenseTypeColumn);
+            this.ShowCalendarPopupCommand = new DelegateCommand<object>(ShowCalendar);
         }
 
         #region Commands
@@ -151,6 +159,7 @@ namespace WpfApp1.DetailPageModule.ViewModels
         public ICommand ChangeBackgroundColorCommand { get; set; }
         public ICommand LostFocusAmountColumnCommand { get; set; }
         public ICommand LostFocusExpenseTypeColumnCommand { get; set; }
+        public ICommand ShowCalendarPopupCommand { get; set; }
 
         #endregion
 
@@ -219,11 +228,11 @@ namespace WpfApp1.DetailPageModule.ViewModels
                 var detailTask = obj as ExpenseItem;
                 expenseItemSelected = detailTask;
 
-                //ShowPopup = true;
+                ShowDetailPopup = true;
             }
             catch
             {
-                ShowPopup = false;
+                ShowDetailPopup = false;
             }
         }
 
@@ -267,6 +276,22 @@ namespace WpfApp1.DetailPageModule.ViewModels
             catch (Exception ex)
             {
                 MessageBox.Show("Update Chart Fail!", "Update Chart", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void ShowCalendar(object obj)
+        {
+            try
+            {
+                //UpdatePieSeries();
+                //var detailTask = obj as ExpenseItem;
+                //expenseItemSelected = detailTask;
+
+                ShowCalendarPopup = true;
+            }
+            catch
+            {
+                ShowCalendarPopup = false;
             }
         }
 

@@ -16,9 +16,3 @@
         <UserControl Grid.Row="0" prism:RegionManager.RegionName="HomePageRegion"/>
     </Grid>
 </Window>
-
-<!--<StackPanel>
-    <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
-    <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
-    <TextBox Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
-</StackPanel>-->

@@ -31,6 +31,7 @@ namespace WpfApp1.HomePageModule.ViewModels
             this.OpenMenuPageCommand = new DelegateCommand(OpenMenuPage);
             this.OpenToDoPageCommand = new DelegateCommand(OpenToDoPage);
             this.OpenExpensePageCommand = new DelegateCommand(OpenExpensePage);
+            this.CloseMenuCommand = new DelegateCommand(CloseMenu);
         }
 
         #region Observable Properties
@@ -42,11 +43,11 @@ namespace WpfApp1.HomePageModule.ViewModels
             set => SetProperty(ref _homePageIsChecked, value);
         }
 
-        private bool _settingPageIsChecked = false;
-        public bool SettingPageIsChecked
+        private bool _menuPageIsChecked = false;
+        public bool MenuPageIsChecked
         {
-            get => _settingPageIsChecked;
-            set => SetProperty(ref _settingPageIsChecked, value);
+            get => _menuPageIsChecked;
+            set => SetProperty(ref _menuPageIsChecked, value);
         }
 
         private bool _todoPageIsChecked = false;
@@ -72,6 +73,7 @@ namespace WpfApp1.HomePageModule.ViewModels
         public ICommand OpenMenuPageCommand { get; }
         public ICommand OpenToDoPageCommand { get; }
         public ICommand OpenExpensePageCommand { get; }
+        public ICommand CloseMenuCommand { get; }
         #endregion
 
 
@@ -80,7 +82,7 @@ namespace WpfApp1.HomePageModule.ViewModels
         private void OpenHomePage()
         {
             HomePageIsChecked = true;
-            SettingPageIsChecked = false;
+            MenuPageIsChecked = false;
             TodoPageIsChecked = false;
             ExpensePageIsChecked = false;
             _regionManager.RequestNavigate("DetailPageRegion", "DetailPageView");
@@ -88,17 +90,20 @@ namespace WpfApp1.HomePageModule.ViewModels
 
         private void OpenMenuPage()
         {
-            HomePageIsChecked = false;
-            SettingPageIsChecked = true;
-            TodoPageIsChecked = false;
-            ExpensePageIsChecked = false;
-            _regionManager.RequestNavigate("DetailPageRegion", "MenuPageView");
+            if (MenuPageIsChecked)
+            {
+                HomePageIsChecked = false;
+                TodoPageIsChecked = false;
+                ExpensePageIsChecked = false;
+                _regionManager.RequestNavigate("MenuRegion", "MenuPageView");
+            }
+            
         }
 
         private void OpenToDoPage()
         {
             HomePageIsChecked = false;
-            SettingPageIsChecked = false;
+            MenuPageIsChecked = false;
             TodoPageIsChecked = true;
             ExpensePageIsChecked = false;
             _regionManager.RequestNavigate("DetailPageRegion", "ToDoPageView");
@@ -107,10 +112,15 @@ namespace WpfApp1.HomePageModule.ViewModels
         private void OpenExpensePage()
         {
             HomePageIsChecked = false;
-            SettingPageIsChecked = false;
+            MenuPageIsChecked = false;
             TodoPageIsChecked = false;
             ExpensePageIsChecked = true;
             _regionManager.RequestNavigate("DetailPageRegion", "ExpensePageView");
+        }
+
+        private void CloseMenu()
+        {
+            MenuPageIsChecked = false;
         }
         #endregion
     }

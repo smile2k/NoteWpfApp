@@ -108,6 +108,10 @@
     <Resource Include="Resources\icon_setting_50.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WpfApp1.Based.Common\WpfApp1.Based.Common.csproj">
+      <Project>{5db47462-bc9d-4b13-91b4-441b7631a856}</Project>
+      <Name>WpfApp1.Based.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfApp1.Service.DataHandler\WpfApp1.Service.csproj">
       <Project>{199d98e3-942f-461d-b50f-c0c79d55401b}</Project>
       <Name>WpfApp1.Service</Name>
@@ -121,6 +125,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\icon_todo_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_menu_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_menu_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_menu_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

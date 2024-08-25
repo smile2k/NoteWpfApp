@@ -9,12 +9,12 @@
              d:DesignHeight="558" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="161"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Border Grid.Column="0">
-            <StackPanel Orientation="Vertical" Background="#676767">
+            <StackPanel Orientation="Vertical" Background="#F0F0F0">
                 <!-- Settings -->
                 <CheckBox IsChecked="{Binding IsShowSetting}" Command="{Binding ToggleShowSettingCommand}">
                     <CheckBox.Style>
@@ -27,19 +27,19 @@
                                                 <ColumnDefinition Width="52"/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-                                            <!--<Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"
-                                                   Source="/Dashboard.OptionMenuModule;component/Resources/icn_setting_p.png"
-                                                   Width="25"
-                                                   Height="25"
+                                            <Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"
+                                                   Source="/WpfApp1.MenuOption;component/Resources/icon_setting_50.png"
+                                                   Width="20"
+                                                   Height="20"
                                                    HorizontalAlignment="Right"
-                                                   Margin="0 0 10 0"/>-->  
+                                                   Margin="0 0 10 0"/>  
                                             <TextBlock Grid.Column="1" Text="Settings" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                                         </Grid>
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="Background" Value="#676767"/>
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#F0F0F0"/>
+                            <Setter Property="Foreground" Value="#676767"/>
                             <Setter Property="Height" Value="50"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                             <Setter Property="FontSize" Value="17"/>
@@ -48,7 +48,8 @@
                                     <Setter Property="Background" Value="#404454"/>
                                 </Trigger>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#404454"/>
+                                    <Setter Property="Background" Value="#676767"/>
+                                    <Setter Property="Foreground" Value="#F0F0F0"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -70,9 +71,9 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
                                             <Image Grid.Column="0" RenderOptions.BitmapScalingMode="HighQuality"
-                                           Source="/Dashboard.OptionMenuModule;component/Resources/ic_info@3x.png"
-                                           Width="25"
-                                           Height="25"
+                                           Source="/WpfApp1.MenuOption;component/Resources/icon_info_50.png"
+                                           Width="20"
+                                           Height="20"
                                            HorizontalAlignment="Right"
                                            Margin="0 0 10 0"/>
                                             <TextBlock Grid.Column="1" Text="Information"
@@ -82,8 +83,8 @@
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="Background" Value="#676767"/>
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#F0F0F0"/>
+                            <Setter Property="Foreground" Value="#676767"/>
                             <Setter Property="Height" Value="50"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                             <Setter Property="FontSize" Value="17"/>
@@ -92,7 +93,8 @@
                                     <Setter Property="Background" Value="#404454"/>
                                 </Trigger>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#404454"/>
+                                    <Setter Property="Background" Value="#676767"/>
+                                    <Setter Property="Foreground" Value="#F0F0F0"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>

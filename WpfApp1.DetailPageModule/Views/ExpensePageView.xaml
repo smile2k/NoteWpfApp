@@ -127,7 +127,7 @@
                         <DataTemplate>
                             <Button Content="{Binding Datetime}" MinWidth="30" FontFamily="SegoeUI-Semibold"
                                     BorderThickness="0" Background="White"
-                                    Command="{Binding DataContext.OpenDetailRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                    Command="{Binding DataContext.ShowCalendarPopupCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                     CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridRow}}}">
                                 
                             </Button>
@@ -250,11 +250,18 @@
         <!--<Grid Grid.Row="4" Background="LightGreen"></Grid>-->
         
         <!-- Popup Control -->
-        <Popup x:Name="detailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
-               IsOpen="{Binding ShowPopup}">
+        <Popup x:Name="DetailsPopup" Placement="Mouse" StaysOpen="False" Width="300"
+               IsOpen="{Binding ShowDetailPopup}">
+            <Border Background="White" BorderBrush="Black" BorderThickness="1" Padding="10">
+                <TextBlock Text="A"/>
+            </Border>
+        </Popup>
+
+        <Popup x:Name="CalendarPopup" Placement="Mouse" StaysOpen="False" Width="300"
+            IsOpen="{Binding ShowCalendarPopup}">
             <Border Background="White" BorderBrush="Black" BorderThickness="1" Padding="10">
                 <Calendar SelectionMode="SingleDate" 
-                          SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                  SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Border>
         </Popup>
     </Grid>

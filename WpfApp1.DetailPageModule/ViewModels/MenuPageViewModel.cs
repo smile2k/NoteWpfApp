@@ -12,7 +12,7 @@ using WpfApp1.MenuOption.Views;
 
 namespace WpfApp1.DetailPageModule.ViewModels
 {
-    public class MenuPageViewModel : BindableBase
+    public class MenuPageViewModel : BindableBase, INavigationAware
     {
         #region Fields
 
@@ -87,6 +87,24 @@ namespace WpfApp1.DetailPageModule.ViewModels
             }
         }
 
+        #endregion
+
+        #region Navigate
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            _regionManager.RequestNavigate("MenuContentRegion", nameof(NothingView));
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+
+        }
         #endregion
     }
 }

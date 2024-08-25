@@ -76,7 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_setting_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_info_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_info_50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

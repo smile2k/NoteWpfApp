@@ -4,13 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.HomePageModule.Views"
+             xmlns:cvt="clr-namespace:WpfApp1.Based.Common.Converters;assembly=WpfApp1.Based.Common"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:viewModels="clr-namespace:WpfApp1.HomePageModule.ViewModels"
              d:DataContext="{d:DesignInstance Type=viewModels:HomePageViewModel}">
 
+    <UserControl.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding CloseMenuCommand}"/>
+    </UserControl.InputBindings>
+    
     <UserControl.Resources>
+        <cvt:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        
         <!-- Định nghĩa Style cho Button -->
         <Style TargetType="Button" x:Key="CustomButtonStyle">
             <Setter Property="Background" Value="LightBlue"/>
@@ -49,16 +56,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>-->
             <StackPanel Orientation="Horizontal" Background="#F0F0F0" HorizontalAlignment="Left" Width="160">
-                <ToggleButton Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0"  Padding="0"
+                <ToggleButton Grid.Column="0" x:Name="MenuToggleButton"
+                              Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
+                              Background="#F0F0F0" 
+                              Command="{Binding OpenMenuPageCommand}" IsChecked="{Binding MenuPageIsChecked, Mode=TwoWay}">
+                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_menu_48.png" Stretch="Fill"/>
+                </ToggleButton>
+                <ToggleButton Grid.Column="1" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0"  Padding="0"
                               Background="#F0F0F0"
                               Command="{Binding OpenHomePageCommand}" IsChecked="{Binding HomePageIsChecked, Mode=TwoWay}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icon_home_50.png" Stretch="Uniform"></Image>
                 </ToggleButton>
-                <ToggleButton Grid.Column="1" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="1"
-                              Background="#F0F0F0" 
-                              Command="{Binding OpenMenuPageCommand}" IsChecked="{Binding SettingPageIsChecked, Mode=TwoWay}">
-                    <Image Source="/WpfApp1.HomePage;component/Resources/icon_setting_50.png" Stretch="Uniform"/>
-                </ToggleButton>
+                
                 <ToggleButton Grid.Column="2" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="0"
                               Background="#F0F0F0"
                               Command="{Binding OpenToDoPageCommand}" IsChecked="{Binding TodoPageIsChecked, Mode=TwoWay}">
@@ -69,13 +78,26 @@
                               Command="{Binding OpenExpensePageCommand}" IsChecked="{Binding ExpensePageIsChecked, Mode=TwoWay}">
                     <Image Source="/WpfApp1.HomePage;component/Resources/icon_money_50.png" Stretch="Fill"></Image>
                 </ToggleButton>
+                <ToggleButton Grid.Column="4" Height="40" Width="40" HorizontalAlignment="Left" BorderThickness="0" Padding="0" 
+                              Background="Red">
+                    
+                </ToggleButton>
             </StackPanel>
             
 
         </Grid>
 
+        
+        
         <Grid Grid.Row="1">
-            <UserControl Grid.Row="0" prism:RegionManager.RegionName="DetailPageRegion"/>
+            <UserControl Panel.ZIndex="0"
+                         prism:RegionManager.RegionName="DetailPageRegion"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <UserControl Panel.ZIndex="1"
+                 prism:RegionManager.RegionName="MenuRegion"                         
+                 Visibility="{Binding IsChecked, ElementName=MenuToggleButton, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </Grid>
 </UserControl>

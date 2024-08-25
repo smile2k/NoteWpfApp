@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{10535AFF-DFBE-4C3E-BF5A-0B9BBB33101E}|WpfApp1\\WpfApp1.MainWindow.csproj|solutionrelative:wpfapp1\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}|WpfApp1.DetailPageModule\\WpfApp1.DetailPageModule.csproj|c:\\users\\pc\\source\\repos\\wpfapp1\\wpfapp1.detailpagemodule\\views\\expensepageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}|WpfApp1.DetailPageModule\\WpfApp1.DetailPageModule.csproj|C:\\Users\\PC\\source\\repos\\WpfApp1\\wpfapp1.detailpagemodule\\views\\expensepageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C15CDB47-7DCF-435E-AB77-FFBBC18364BF}|WpfApp1.DetailPageModule\\WpfApp1.DetailPageModule.csproj|solutionrelative:wpfapp1.detailpagemodule\\views\\expensepageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -168,8 +168,7 @@
               "ToolTip": "C:\\Users\\PC\\source\\repos\\WpfApp1\\WpfApp1.DetailPageModule\\Views\\ExpensePageView.xaml",
               "RelativeToolTip": "WpfApp1.DetailPageModule\\Views\\ExpensePageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-19T02:18:36.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T02:18:36.976Z"
             },
             {
               "$type": "Document",
@@ -415,8 +414,7 @@
               "ToolTip": "C:\\Users\\PC\\source\\repos\\WpfApp1\\WpfApp1\\App.xaml",
               "RelativeToolTip": "WpfApp1\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-08-19T02:18:37.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-19T02:18:37.004Z"
             },
             {
               "$type": "Document",
